@@ -1,0 +1,9 @@
+ <h1> Log In </h1>
+ 
+ <div class="notice"><%= flash[:notice] %></div>
+ <%= form_tag(do_login_url, method: "post") do %>
+   Username: <%= text_field_tag(:email) %><br />
+   Password: <%= password_field_tag(:password) %><br />
+   <%= submit_tag("Log In") %>
+ <% end %>
+ <%= link_to "Create New User", new_user_url %>
