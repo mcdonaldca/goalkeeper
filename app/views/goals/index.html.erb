@@ -1,0 +1,12 @@
+<h1>my goals</hi>
+
+<h2> List of goals </h2>
+<ul>
+<% @goals.each do |goal| %>
+<li>
+Did you <b><%= goal.action %></b> today? (<%= link_to "View", goal %>, 
+  <%= link_to "Delete", goal_url(goal), method: 'delete' %>)
+</li>
+<% end %>
+</ul>
+<%= link_to "Add a New goal", new_goal_url %>

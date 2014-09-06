@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  action: MyString
+  duration: MyString
+  frequency: MyString
+  charity: MyString
+
+two:
+  action: MyString
+  duration: MyString
+  frequency: MyString
+  charity: MyString
