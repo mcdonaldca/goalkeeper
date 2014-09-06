@@ -18,6 +18,9 @@ Goalkeeper::Application.routes.draw do
   post 'goals/new/commitment' => 'goals#commitment', :as => :commitment
   post 'goals/new/action' => 'goals#action', :as => :action
 
+  get 'ziggeo' => 'gk#ziggeo'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
