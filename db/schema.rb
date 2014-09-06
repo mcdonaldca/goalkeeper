@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140906220930) do
+ActiveRecord::Schema.define(:version => 20140906225405) do
+
+  create_table "atoms", :force => true do |t|
+    t.boolean  "completed",  :default => false
+    t.string   "month"
+    t.integer  "day"
+    t.integer  "year"
+    t.boolean  "ignore",     :default => false
+    t.boolean  "success",    :default => false
+    t.string   "proof"
+    t.text     "note"
+    t.datetime "posted_at"
+    t.integer  "goal_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "goals", :force => true do |t|
     t.string   "action"

@@ -1,0 +1,2 @@
+class AtomsController < ApplicationController
+end

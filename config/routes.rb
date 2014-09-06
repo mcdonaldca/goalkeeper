@@ -1,5 +1,8 @@
 Goalkeeper::Application.routes.draw do
 
+  resources :atoms
+
+
   resources :goals
   resources :users
 

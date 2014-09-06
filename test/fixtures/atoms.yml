@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  completed: false
+  month: MyString
+  day: 1
+  year: 1
+  ignore: false
+  success: false
+  proof: MyString
+  note: MyText
+  posted_at: 2014-09-06 18:49:20
+  goal_id: 1
+
+two:
+  completed: false
+  month: MyString
+  day: 1
+  year: 1
+  ignore: false
+  success: false
+  proof: MyString
+  note: MyText
+  posted_at: 2014-09-06 18:49:20
+  goal_id: 1
