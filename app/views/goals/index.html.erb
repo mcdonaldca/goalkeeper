@@ -4,7 +4,7 @@
 <ul>
 <% @goals.each do |goal| %>
 <li>
-Did you <b><%= goal.action %></b> today? <b><%= goal.duration %>, <b><%= goal.frequency %>, <b><%= goal.charity %>(<%= link_to "View", goal %>, 
+Did you <b><%= goal.action %></b> today? <%= goal.duration %>, <%= goal.frequency %>, <%= goal.charity %>(<%= link_to "View", goal %>, 
   <%= link_to "Delete", goal_url(goal), method: 'delete' %>)
 </li>
 <% end %>

@@ -10,20 +10,20 @@
 	<%= label_tag :duration_six, "Six Months" %><br></div>
 	<div></div><br>
 	<div>
-		<%= check_box_tag(:SU) %>
-		<%= label_tag(:SU, "Su") %>
-		<%= check_box_tag(:M) %>
-		<%= label_tag(:M, "M") %>
-		<%= check_box_tag(:TU) %>
-		<%= label_tag(:TU, "Tu") %>
-		<%= check_box_tag(:W) %>
-		<%= label_tag(:W, "W") %>
-		<%= check_box_tag(:TH) %>
-		<%= label_tag(:TH, "Th") %>
-		<%= check_box_tag(:F) %>
-		<%= label_tag(:F, "F") %>
-		<%= check_box_tag(:SA) %>
-		<%= label_tag(:SA, "Sa") %>
+		<%= check_box_tag(:SUN) %>
+		<%= label_tag(:SUN, "Su") %>
+		<%= check_box_tag(:MON) %>
+		<%= label_tag(:MON, "M") %>
+		<%= check_box_tag(:TUE) %>
+		<%= label_tag(:TUE, "Tu") %>
+		<%= check_box_tag(:WED) %>
+		<%= label_tag(:WED, "W") %>
+		<%= check_box_tag(:THU) %>
+		<%= label_tag(:THU, "Th") %>
+		<%= check_box_tag(:FRI) %>
+		<%= label_tag(:FRI, "F") %>
+		<%= check_box_tag(:SAT) %>
+		<%= label_tag(:SAT, "Sa") %>
 	</div>
 	<div><p>You're committing for ______, # days a week<p></div>
 	<%= hidden_field_tag(:id, @goal.id) %>
