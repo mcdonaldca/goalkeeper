@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   validates :gender, :presence => true
   validates :birthday, :presence => true
   validates :password, :presence => true, :confirmation => true
+
+  has_many :goals
 end

@@ -1,0 +1,19 @@
+<h2> New goal </h2>
+
+<%= form_for @goal, url: {action: "commitment"} do |f| %>
+ <% if @goal.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+    <ul>
+    <% @goal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>only choice is AmericanHeartAssociation</p>
+  <%= f.label :charity, "Charity" %> <%= f.text_field :charity, value: "AmericanHeartAssociation" %><br />
+  <%= f.submit %>
+<% end %>
+<hr />
+<%= link_to "Cancel", goals_url %>

@@ -1,5 +1,6 @@
 Goalkeeper::Application.routes.draw do
 
+  resources :goals
   resources :users
 
   root :to => 'gk#index', :as => :index
@@ -13,6 +14,9 @@ Goalkeeper::Application.routes.draw do
 
   get  'authorization' => 'auth#authorization'
   post 'authorization' => 'auth#authorization'
+
+  post 'goals/new/commitment' => 'goals#commitment', :as => :commitment
+  post 'goals/new/action' => 'goals#action', :as => :action
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
