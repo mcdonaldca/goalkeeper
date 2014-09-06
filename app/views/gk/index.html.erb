@@ -1,8 +1,4 @@
 <h1>goalkeeper</h1>
 
-<% unless session[:user_id].nil? %>
-<%= session[:user_id] %>
-<% end %>
-
 <%= link_to "Log In", login_url %> |
 <%= link_to "Log Out", logout_url %>

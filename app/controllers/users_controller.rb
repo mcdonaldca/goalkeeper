@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 	 
     if @user.save
     	session[:user_id] = @user.id
-      redirect_to feed_url
+      redirect_to venmo_url
     else
       render action: 'new'
     end

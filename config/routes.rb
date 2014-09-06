@@ -1,16 +1,18 @@
 Goalkeeper::Application.routes.draw do
-  get "auth/login"
-
-  get "auth/logout"
 
   resources :users
 
-  root :to => 'home#index', :as => :index
-  match "feed" => "home#feed", :as => :feed
+  root :to => 'gk#index', :as => :index
+  get "feed" => "gk#feed", :as => :feed
+
   get "login" => "auth#login", :as => :login
   get "logout" => "auth#logout", :as => :logout
   post "do_login" => "auth#do_login", :as => :do_login
 
+  get 'login/venmo' => "auth#venmo", :as => :venmo
+
+  get  'authorization' => 'auth#authorization'
+  post 'authorization' => 'auth#authorization'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
