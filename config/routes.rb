@@ -14,6 +14,8 @@ Goalkeeper::Application.routes.draw do
   get  'authorization' => 'auth#authorization'
   post 'authorization' => 'auth#authorization'
 
+  get 'ziggeo' => 'gk#ziggeo'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
