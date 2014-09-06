@@ -1,0 +1,10 @@
+
+
+
+<%= form_tag action: "create" do %>
+	<p>I will</p>
+  <%= text_field_tag(:goal_action) %>
+	<%= hidden_field_tag(:id, @goal.id) %>
+	<p>____ for __ month(s)</p>
+  <%= submit_tag("Set a goal!") %>
+<% end %>

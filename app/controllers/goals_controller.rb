@@ -1,7 +1,10 @@
 class GoalsController < ApplicationController
 
+	before_filter :get_logged_in_user
+
 	def index
-		@goals = Goal.all
+		user = User.find session[:user_id]
+		@goals = user.goals
 	end
 
 	def new
@@ -10,10 +13,11 @@ class GoalsController < ApplicationController
 
 	def commitment
 		@goal = Goal.new
+		@goal.user = User.find session[:user_id]
 		@goal.charity = params[:goal][:charity]
 		@goal.action = 'tbd'
 		@goal.duration = '1'
-		@goal.frequency = 'every'
+		@goal.frequency = 'everyday'
 	 
     if !@goal.save
       render action: 'new'
@@ -27,6 +31,16 @@ class GoalsController < ApplicationController
 			frequency += params[:SU]
 		elsif params[:M] != nil
 			frequency += params[:M]
+		elsif params[:TU] != nil
+			frequency += params[:TU]
+		elsif params[:W] != nil
+			frequency += params[:W]
+		elsif params[:TH] != nil
+			frequency += params[:TH]
+		elsif params[:F] != nil
+			frequency += params[:F]
+		elsif params[:SA] != nil
+			frequency += params[:SA]
 		end
 		#frequency = params[:SU] + params[:M] + params[:TU] + params[:W] + params[:TH] + params[:F] + params[:SA]
 
@@ -41,9 +55,17 @@ class GoalsController < ApplicationController
 		@goal = Goal.find params[:id]
 		@goal.duration = duration
 		@goal.frequency = frequency
+		@goal.save
 	end
 
 	def create
+		action = params[:goal_action]
+
+		@goal = Goal.find params[:id]
+		@goal.action = action
+		@goal.save
+
+		redirect_to goals_url
 	end
 
 	def destroy
