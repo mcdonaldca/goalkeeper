@@ -1,44 +1,48 @@
-<h2> New goal </h2>
+<h1> Plan a New Goal </h1>
 
 <%= form_for @goal, url: {action: "commitment"} do |f| %>
- <% if @goal.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
-    <ul>
-    <% @goal.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <%= f.label :charity, "Select a Charity" %>
+  <p>Start by selecting your charity</p>
   <div class="people">
-    <div class="person">
+    <div class="person AmericanHeartAssociation" data-id="AmericanHeartAssociation">
       <div class="friend-profile" style="background:url(<%= asset_path 'AHA.jpg' %>);background-size:50px 50px;">
-      </div>
-      <p>American Heart Association</p>
-      <input type="checkbox" id="AmericanHeartAssociation" name="people[]" value="AmericanHeartAssociation" >
+      </div><p>American Heart Association</p>
+      <input type="checkbox" id="AmericanHeartAssociation" name="charity" value="AmericanHeartAssociation" >
     </div>
-    <div class="person">
+    <div class="person possible" data-id="possible">
       <div class="friend-profile" style="background:url(<%= asset_path 'possible.jpg' %>);background-size:50px 50px;">
-      </div>
-      <p>Possible Health</p>
-      <input type="checkbox" id="possible" name="people[]" value="possible" >
+      </div><p>Possible Health</p>
+      <input type="checkbox" id="possible" name="charity" value="possible" >
     </div>
-    <div class="person">
+    <div class="person givedirectly" data-id="givedirectly">
       <div class="friend-profile" style="background:url(<%= asset_path 'GiveDirectly.jpg' %>);background-size:50px 50px;">
-      </div>
-      <p>GiveDirectly</p>
-      <input type="checkbox" id="givedirectly" name="people[]" value="givedirectly" >
+      </div><p>GiveDirectly</p>
+      <input type="checkbox" id="givedirectly" name="charity" value="givedirectly" >
     </div>
-    <div class="person">
+    <div class="person malarianomore" data-id="malarianomore">
       <div class="friend-profile" style="background:url(<%= asset_path 'MNM.jpg' %>);background-size:50px 50px;">
-      </div>
-      <p>Malaria No More</p>
-      <input type="checkbox" id="malarianomore" name="people[]" value="malarianomore" >
+      </div><p>Malaria No More</p>
+      <input type="checkbox" id="malarianomore" name="charity" value="malarianomore" >
     </div>
   </div>
   <%= f.submit "Select", class: "button submit" %>
 <% end %>
-<hr />
+
+<div class="new-user">
 <%= link_to "Cancel", goals_url %>
+</div>
+
+<script type="text/javascript">
+$( ".person" ).click( function() {
+  $(".AmericanHeartAssociation").removeClass("selected");
+  $(".possible").removeClass("selected");
+  $(".givedirectly").removeClass("selected");
+  $(".malarianomore").removeClass("selected");
+
+  var person = $(this);
+  person.addClass("selected");
+  var id = person.attr("data-id");
+
+  if (person.hasClass("selected")) $("input#" + id).prop('checked', true);
+  else $("input#" + id).prop('checked', false);
+});
+</script>

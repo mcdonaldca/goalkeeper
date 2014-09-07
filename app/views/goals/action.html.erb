@@ -1,10 +1,29 @@
-
-<%= @disp %>
-
 <%= form_tag action: "create" do %>
 	<p>I will</p>
   <%= text_field_tag(:goal_action) %>
 	<%= hidden_field_tag(:id, @goal.id) %>
-	<p>____ for __ month(s)</p>
-  <%= submit_tag("Set a goal!") %>
+	<p>
+
+		<% if @goal.frequency == "everyday" %>
+			    every day
+			 <% elsif @goal.frequency == "weekends" %>
+			 	 on the weekends
+			 <% elsif @goal.frequency == "weekdays" %>
+			 	 during the week
+			 <% end %>
+
+			 for
+
+			 <% if @goal.duration == "1" %>
+			 	 one month.
+			 <% elsif @goal.duration == "3" %>
+			 	 three months.
+			 <% else %>
+			 	 six months.
+			 <% end %>
+			 
+
+
+	</p>
+  <%= submit_tag "Set a goal!", class: "button submit" %>
 <% end %>
