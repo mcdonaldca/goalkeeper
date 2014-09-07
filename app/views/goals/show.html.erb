@@ -1,1 +1,54 @@
-<h1>You will <b><%= @goal.action %></b></h1>
+<h1>You want to <i><%= @goal.action %></i>.</h1>
+<div class="percent-success">
+	<canvas id="myChart" width="100%" height="100%"></canvas>
+</div><div class="amount-spent">
+	<div class="amount">$100</div>
+</div>
+<div class="caption">
+	Percent success rate
+</div><div class="caption">
+  Amount donated
+</div>
+
+<div class="progress-bar">
+	<div class="progress">
+	</div>
+</div>
+<div class="caption-full">Progress so far</div>
+
+<h2>
+
+<%= javascript_include_tag "Chart.min.js" %>
+<script type="text/javascript">
+var ctx = document.getElementById("myChart").getContext("2d");
+var data = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Failure"
+    },
+    {
+        value: 50,
+        color: "#8AB839",
+        highlight: "#94C53D",
+        label: "Success"
+    }
+];
+var myDoughnutChart = new Chart(ctx).Doughnut(data,{
+
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout : 50, // This is 0 for Pie charts
+
+    //Number - Amount of animation steps
+    animationSteps : 100,
+
+    //String - Animation easing effect
+    animationEasing : "easeOutBounce",
+
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate : true,
+
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale : false });
+</script>
