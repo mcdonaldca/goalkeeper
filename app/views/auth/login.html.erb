@@ -1,9 +1,11 @@
- <h1> Log In </h1>
- 
- <div class="notice"><%= flash[:notice] %></div>
+<br>
+	<div class="notice"><%= flash[:notice] %></div>
  <%= form_tag(do_login_url, method: "post") do %>
-   Username: <%= text_field_tag(:email) %><br />
-   Password: <%= password_field_tag(:password) %><br />
-   <%= submit_tag("Log In") %>
+   <%= text_field_tag :email, nil, placeholder: 'Email' %><br />
+   <%= password_field_tag :password, nil, placeholder: 'Password' %><br />
+   <%= submit_tag "Log In", class: "button submit" %>
  <% end %>
- <%= link_to "Create New User", new_user_url %>
+
+ <div class="new-user">
+ 	<%= link_to "Create New User", new_user_url %>
+ </div>

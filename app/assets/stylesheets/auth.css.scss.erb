@@ -1,0 +1,42 @@
+// Place all the styles related to the auth controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$rokkitt-stack: Rokkitt, sans-serif;
+$grey-blue: #434F5B;
+
+.new-user {
+	width: 100%;
+	text-align: center;
+	padding-top: 1em;
+
+	a {
+		font: 1.25em $rokkitt-stack;
+		color: $grey-blue;
+		text-decoration: none;
+	}
+}
+
+input[type="text"], input[type="password"] {
+	background: white;
+	border: 1px #ccc solid;
+	width: 80%;
+	height: 2em;
+	margin: .5em 5%;
+	padding-left: 10%;
+	font-size: 1.5em;
+}
+
+input[type="text"] {
+	background-image: url(<%= asset_path 'email.png' %>);
+	background-position: 12px 10px;
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+}
+
+input[type="password"] {
+	background-image: url(<%= asset_path 'password.png' %>);
+	background-position: 12px 10px;
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+}
