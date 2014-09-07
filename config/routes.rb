@@ -22,8 +22,7 @@ Goalkeeper::Application.routes.draw do
   get 'goals/:id/success/' => 'atoms#success', :as => :success
   get 'goals/:id/failure/' => 'atoms#failure', :as => :failure
 
-  get 'ziggeo' => 'gk#ziggeo'
-
+  post '/proof' => 'atoms#proof', :as => :proof
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

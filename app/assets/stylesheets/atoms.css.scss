@@ -1,3 +1,15 @@
 // Place all the styles related to the Atoms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.success-form {
+	position: absolute;
+	top: 33em;
+}
+
+input[type="text"].note {
+	padding-left: 5%;
+	width: 85%;
+	margin: 0 5%;
+}

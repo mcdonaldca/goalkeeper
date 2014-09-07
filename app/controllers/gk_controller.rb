@@ -7,7 +7,4 @@ class GkController < ApplicationController
   def feed
   end  
 
-  def ziggeo
-  end
-
 end

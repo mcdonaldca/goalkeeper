@@ -1,12 +1,17 @@
 <h1>my goals</h1>
 
-<ul>
+<ul class="goals">
 <% @goals.each do |goal| %>
 <li>
-Did you <b><%= goal.action %></b> today? (<%= link_to "Delete", goal_url(goal), method: 'delete' %>)
-<%= link_to "Yes", success_url(goal) %> <%= link_to "No", failure_url(goal) %> <%= link_to "Progress", goal %> 
+
+<div class="action">Did you <i><%= goal.action %></i> today?</div>
+
+<!--(%= link_to "Delete", goal_url(goal), method: 'delete' %)-->
+
+
+<div class="success"><%= link_to "Yes", success_url(goal) %></div><div class="failure"><%= link_to "No", failure_url(goal) %></div><div class="progress"><%= link_to "Progress", goal %></div>
   
 </li>
 <% end %>
 </ul>
-<%= link_to "Add a New goal", new_goal_url %>
+<%= link_to "Add a New Goal", new_goal_url, class: "button" %>

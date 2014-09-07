@@ -1,6 +1,14 @@
 // Place all the styles related to the Goals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ $green: #8AB839;
+ $grey-blue: #434F5B;
+ $light-grey: #F2F2F2;
+ $dark-grey: #2E2E2E;
+ $abel-stack: Abel, Tahama, sans-serif;
+ $rokkitt-stack: Rokkitt, sans-serif;
+
 .people {
 	input[type="checkbox"] {
 		display: none;
@@ -41,3 +49,36 @@
 		background: url(<%= asset_path 'checked.png' %>) !important;
 	}
 }
+
+.goals li {
+	list-style: none;
+	margin: .5em 0 .5em 0;
+
+	.action {
+		width: 100%;
+		text-align: center;
+		font: 2em $rokkitt-stack;
+
+		i {
+			display: inline-block;
+			font-style: normal;
+			border-bottom: 1px $dark-grey dotted;
+			padding: 0 10px;
+		}
+	}
+
+	.success, .failure {
+		display: inline-block;
+		width: 19%;
+		padding: 5px 3%;
+	}
+
+	.progress {
+		display: inline-block;
+		width: 44%;
+		padding: 5px 3%;
+	}
+}
+
+
+

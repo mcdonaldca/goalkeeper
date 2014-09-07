@@ -1,7 +1,7 @@
-<h1>Good Job!</h1>
+<h1>Good Job! Now prove it.</h1>
 <ziggeo ziggeo-responsive></ziggeo>
-<!--<%= form_tag(do_success_redirect, method: "post") do %>
-   Notes: <%= text_field_tag(:notes) %><br />
-   <%= submit_tag("Log In") %>
+<%= form_tag '/proof', method: "post", class: "success-form" do %>
+   <%= text_field_tag :note, nil, placeholder: 'Notes?', class: "note" %><br />
    <%= hidden_field_tag(:token) %>
-<% end %>-->
+   <%= submit_tag "Done", class: "button submit" %>
+<% end %>
