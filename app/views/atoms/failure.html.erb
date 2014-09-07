@@ -1,3 +1,7 @@
-<h1>:(</h1>
-<p>You didn't meet your goal, so it looks like it's time to donate to charity</p>
-<%= link_to "submit transactions", submit_url, class: "button" %>
+<h1>On dear :(</h1>
+<p>You didn't meet your goal, so it looks like it's time to donate to charity!</p>
+<p>Please note, you'll need to approve the charge through venmo before the payment is official.</p>
+<%= form_tag('/paid') do %>
+   <%= hidden_field_tag :id, params[:id] %>
+   <%= submit_tag "Send Transaction", class: "button submit" %>
+<% end %>

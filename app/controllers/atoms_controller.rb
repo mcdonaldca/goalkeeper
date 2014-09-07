@@ -36,9 +36,24 @@ class AtomsController < ApplicationController
 
 	def paid
 		goal = Goal.find params[:id]
-		uri = URI.parse('https://api.venmo.com/v1/payments')
-		args = {'user_id' => goal.charity, 'amount' => (5).to_s, 'note' => 'I didn\'t keep up with my tasks on goalkeeper so now I have to donate to charity!', 'audience' => 'friends', 'access_token' => session[:access_token]}
-		@response = Net::HTTP.post_form(uri, args).body
+
+		toSend = {
+			'user_id' => goal.charity, 
+			'amount' => "5", 
+			'note' => 'I didn\'t keep up with my tasks on goalkeeper so now I have to donate to charity!', 
+			'audience' => 'friends', 
+			'access_token' => session[:access_token]
+		}.to_json
+
+    uri = URI.parse('https://api.venmo.com/v1/payments')
+		https = Net::HTTP.new(uri.host, uri.port)
+    https.use_ssl = true
+    req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
+    req.body = "[ #{toSend} ]"
+
+		@response = https.request(req).body
+
+		#redirect_to :goals
 	end
 	
 end
