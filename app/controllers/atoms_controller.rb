@@ -34,8 +34,11 @@ class AtomsController < ApplicationController
 	def edit
 	end
 
-	def submit_url
-		response = Net::HTTP.post_form(URI.parse('https://api.venmo.com/v1/payments'), {'user_id' => person.id, 'amount' => (5).to_s, 'note' => 'I didn\'t keep up with my tasks on goalkeeper so now I have to donate to charity!', 'audience' => 'friends', 'access_token' => session[:access_token]}).body
+	def paid
+		goal = Goal.find params[:id]
+		uri = URI.parse('https://api.venmo.com/v1/payments')
+		args = {'user_id' => goal.charity, 'amount' => (5).to_s, 'note' => 'I didn\'t keep up with my tasks on goalkeeper so now I have to donate to charity!', 'audience' => 'friends', 'access_token' => session[:access_token]}
+		@response = Net::HTTP.post_form(uri, args).body
 	end
 	
 end

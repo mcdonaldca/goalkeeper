@@ -8,9 +8,24 @@
 	<% end %>
 
 	     <td>
-	     	<%= link_to edit_atom_url(atom) do %>
-	     		<%= image_tag "empty.png" %>
-	     	<% end %>
+	     	<% if atom.ignore %>
+		     	<%= link_to edit_atom_url(atom) do %>
+		     		<%= image_tag "ignore.png" %>
+		     	<% end %>
+		    <% elsif !atom.completed %>
+		      <%= link_to edit_atom_url(atom) do %>
+		     		<%= image_tag "empty.png" %>
+		     	<% end %>
+		    <% elsif atom.success %>
+		      <%= link_to edit_atom_url(atom) do %>
+		     		<%= image_tag "succeed.png" %>
+		     	<% end %>
+		    <% else %>
+		      <%= link_to edit_atom_url(atom) do %>
+		     		<%= image_tag "fail.png" %>
+		     	<% end %>
+		    <% end %>
+
 	     <div class="day"><%= atom.month + ' ' + atom.day.to_s %></div>
 	  	 </td>
 

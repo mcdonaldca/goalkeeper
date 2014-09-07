@@ -45,8 +45,7 @@ class AuthController < ApplicationController
 
       response = http.request(request).body
       user_info = JSON.parse(response)["data"]["user"]
-      @access_token = params[:access_token]
-      @username = user_info["username"]      
+      session[:access_token] = params[:access_token]     
     end
     redirect_to feed_url
   end
