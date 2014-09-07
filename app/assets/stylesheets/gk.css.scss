@@ -1,3 +1,33 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ $green: #8AB839;
+ $abel-stack: Abel, Tahama, sans-serif;
+ $rokkitt-stack: Rokkitt, sans-serif;
+
+.landing-title {
+	width: 100%;
+	text-align: center;
+	color: white;
+	padding-top: 1em;
+	font: 4em $abel-stack;
+}
+
+.center-logo {
+	padding-top: 5em;
+	width: 7em;
+	height: 7em;
+
+	margin: 0 auto;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.login-control {
+	margin-top: 10em;
+}
+

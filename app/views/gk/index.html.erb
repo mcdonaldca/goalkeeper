@@ -1,4 +1,20 @@
-<h1>goalkeeper</h1>
+<div class="center-logo">
+	<%= image_tag "icon_greenNblack.png", alt: "goalkeeper logo" %>
+</div>
+<h1 class="landing-title">goalkeeper</h1>
 
-<%= link_to "Log In", login_url %> |
-<%= link_to "Log Out", logout_url %>
+<div class="login-control">
+	<% if session[:user_id].nil? %>
+	<%= link_to "Log In", login_url, class: "button" %>
+	<%= link_to "Sign Up", new_user_url, class: "button" %>
+	<% else %>
+	<%= link_to "Log Out", logout_url, class: "button"  %>
+	<% end %>
+</div>
+
+
+<style>
+  #core {
+  	background: black;
+  }
+</style>

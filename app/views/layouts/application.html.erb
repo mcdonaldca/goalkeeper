@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Goalkeeper</title>
+  <link href='http://fonts.googleapis.com/css?family=Abel|Rokkitt' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "variables" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,7 +21,11 @@
 </head>
 <body>
 
+<div id="core">
+
 <%= yield %>
+
+</div>
 
 </body>
 </html>
