@@ -14,6 +14,7 @@
  $green: #8AB839;
  $grey-blue: #434F5B;
  $light-grey: #F2F2F2;
+ $dark-grey: #2E2E2E;
  $abel-stack: Abel, Tahama, sans-serif;
  $rokkitt-stack: Rokkitt, sans-serif;
 
@@ -45,6 +46,7 @@ body {
 	height: 4em;
 	padding: 0;
 	margin: 0;
+	width: 100%;
 
 	.header-logo {
 		float: left;
@@ -70,6 +72,7 @@ body {
 			text-decoration: none;
 		}
 	}
+
 }
 
 .button {
@@ -92,5 +95,18 @@ body {
 		padding-top: .2em;
 		height: 1.8em;
 	}
-	
+}
+
+p {
+	font: 1.3em $rokkitt-stack;
+	width: 90%;
+	margin: 1em 5%;
+	color: $dark-grey;
+}
+
+h1 {
+	font-family: $abel-stack;
+	padding: .2em 0 .3em 0;
+	text-align: center;
+	border-bottom: 2px black dotted;
 }

@@ -1,2 +1,7 @@
-<h1>Venmo</h1>
-<%= link_to "Connect to Venmo", "https://api.venmo.com/v1/oauth/authorize?client_id=1682&scope=make_payments%20access_profile%20access_friends" %>
+<div class="venmo-logo">
+	<%= image_tag "venmo.png", alt: "Venmo's logo" %>
+</div>
+
+<p>Connect to Venmo so we can connect you with various venmo-enabled charities!</p>
+
+<%= link_to "Connect to Venmo", "https://api.venmo.com/v1/oauth/authorize?client_id=1682&scope=make_payments%20access_profile%20access_friends", class: "button" %>

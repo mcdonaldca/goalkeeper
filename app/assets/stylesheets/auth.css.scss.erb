@@ -43,6 +43,17 @@ $grey-blue: #434F5B;
 	input.name {
 		background-image: url(<%= asset_path 'person.png' %>);
 	}
+
+	select {
+		font: 2em $rokkitt-stack;
+	}
+
+	label {
+		display: inline-block;
+		color: #999;
+		font: 2em $rokkitt-stack;
+		margin: .25em .1em .25em 7%;
+	}
 }
 
 input[type="text"], input[type="password"] {
@@ -57,4 +68,13 @@ input[type="text"], input[type="password"] {
 	background-position: 12px 10px;
 	background-size: 25px 25px;
 	background-repeat: no-repeat;
+}
+
+.venmo-logo {
+	width: 40%;
+	margin: 1.5em 30% 1em 30%;
+
+	img {
+		width: 100%;
+	}
 }

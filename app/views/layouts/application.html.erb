@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" %>
   <%= javascript_include_tag "//assets.ziggeo.com/js/ziggeo-jquery-json2-betajs-player.min.js" %>
-  <%= favicon_link_tag 'icon_greenNblack.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
+  <%= favicon_link_tag 'icon_appicon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
   <%= favicon_link_tag 'icon_greenNwhite.png', :rel => 'shortcut icon', :type => 'image/png' %>
   <meta name="viewport" content="width=device-width, initial-scale = 1.0">
   <script>
@@ -27,11 +27,19 @@
 
   <div class="header">
     <div class="header-logo">
-      <%= link_to image_tag ("icon_greenNblack.png"), {:action => :feed} %>
+      <%= link_to feed_url do %>
+        <%= image_tag('icon_greenNblack.png') %>
+      <% end %>
     </div>
     <div class="header-title">
       <%= link_to "goalkeeper", :feed %>
     </div>
+
+    <% unless session[:user_id].nil? %>
+      <div class="logout">
+        <%= link_to "Log Out", logout_url %>
+      </div>
+    <% end %>
   </div>
 
 <%= yield %>
