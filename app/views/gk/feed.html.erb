@@ -1,13 +1,25 @@
 <h1>newsfeed</h1>
 
 <%= link_to "My Goals", goals_url, class: "button" %>
-<div style="background:url(<%= asset_path 'erin.jpg' %>);background-size:50px 50px;height:60px;">
+<div style="background:url(<%= asset_path 'erin.jpg' %>);background-size:50px 50px;height:50px;width:50px; margin: 15px; float:left">
 </div>
-<ziggeo 
-	ziggeo-video='8f9c90dc243060eef9f4631b7e07d61d' 
-	ziggeo-width=500>
-</ziggeo>
-<ziggeo 
-	ziggeo-video='61a5b21876f95b697cd390436ea9d113' 
-	ziggeo-width=500>
-</ziggeo>
+<div style="float:left">
+	<p>Erin Hoffman</p>
+</div>
+<div style="clear:both">
+	<ziggeo 
+		ziggeo-video='8f9c90dc243060eef9f4631b7e07d61d' 
+		ziggeo-width=500>
+	</ziggeo>
+</div>
+<div style="background:url(<%= asset_path 'caitlin.jpg' %>);background-size:50px 50px;height:50px;width:50px; margin: 15px; float:left">
+</div>
+<div style="float:left">
+	<p>Caitlin McDonald</p>
+</div>
+<div style="clear:both">
+	<ziggeo 
+		ziggeo-video='61a5b21876f95b697cd390436ea9d113' 
+		ziggeo-width=500>
+	</ziggeo>
+</div>
