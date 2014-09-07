@@ -4,8 +4,7 @@
   <title>Goalkeeper</title>
   <link href='http://fonts.googleapis.com/css?family=Abel|Rokkitt' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "variables" %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>  
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "//assets.ziggeo.com/css/ziggeo-betajs-player.min.css" %>
   <%= javascript_include_tag "//assets.ziggeo.com/js/ziggeo-jquery-json2-betajs-player.min.js" %>
@@ -37,6 +36,6 @@
 <%= yield %>
 
 </div>
-
+<%= javascript_include_tag "application" %>
 </body>
 </html>
