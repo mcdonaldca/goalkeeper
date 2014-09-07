@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
 	def commitment
 		@goal = Goal.new
 		@goal.user = User.find session[:user_id]
-		@goal.charity = params[:goal][:charity]
+		@goal.charity = params[:charity]
 		@goal.action = 'tbd'
 		@goal.duration = '1'
 		@goal.frequency = 'everyday'

@@ -16,8 +16,7 @@
 	}
 }
 
-.person,
-.verify {
+.person {
 	position: relative;
 	padding: 15px 0 10px 15px;
 
@@ -29,17 +28,13 @@
 	}
 
 	p {
+		display: inline-block;
 		position: relative;
+		width: auto;
 		top: -17px;
 		left: 12px;
-		display: inline-block;
 		font: 22px "Raleway", sans-serif;
 		font-weight: 400;
-	}
-
-	.owe {
-		float: right;
-		margin: 20px 40px 0 0;
 	}
 
 }
@@ -166,4 +161,25 @@ h1 i {
 	text-align: center;
 	font: 1.2em $rokkitt-stack;
 	color: $grey-blue;
+}
+
+.dur-buttons {
+	width: 90%;
+	margin: 0 5%;
+	font: 1.3em $rokkitt-stack;
+
+	input[type="radio"] {
+		margin: 1em 0;
+	}
+}
+
+.freq-buttons {
+	width: 90%;
+	margin: 0 5% 1em 5%;
+	font: 1.3em $rokkitt-stack;
+	text-align: center;
+
+	input[type="checkbox"] {
+		margin-left: 1em;
+	}
 }

@@ -1,15 +1,17 @@
 <h1>commitment</h1>
 
 <%= form_tag action: "action" do %>
-  <div><p>How long is your goal?</p>
-  <%= radio_button_tag :duration, "1", true %>
+<p>How long is your goal?</p>
+  <div class="dur-buttons">
+  <%= radio_button_tag :duration, "1", true, id: "dur-one" %>
 	<%= label_tag :duration_one, "One Month" %><br>
-	<%= radio_button_tag :duration, "3" %>
+	<%= radio_button_tag :duration, "3", false, id: "dur-three" %>
 	<%= label_tag :duration_three, "Three Months" %><br>
-	<%= radio_button_tag :duration, "6" %>
+	<%= radio_button_tag :duration, "6", false, id: "dur-six" %>
 	<%= label_tag :duration_six, "Six Months" %><br></div>
 	<div></div><br>
-	<div>
+	<p>Which days of the week?</p>
+	<div class="freq-buttons">
 		<%= check_box_tag(:SUN) %>
 		<%= label_tag(:SUN, "Su") %>
 		<%= check_box_tag(:MON) %>
@@ -25,9 +27,19 @@
 		<%= check_box_tag(:SAT) %>
 		<%= label_tag(:SAT, "Sa") %>
 	</div>
-	<div><p>You're committing for ______, # days a week<p></div>
 	<%= hidden_field_tag(:id, @goal.id) %>
-  <%= submit_tag("Let's Do It") %>
+  <%= submit_tag "Let's Do It", class: "button submit" %>
 <% end %>
-<hr />
-<%= link_to "Cancel", goals_url %>
+<div class="new-user"><%= link_to "Cancel", goals_url %></div>
+
+<script type="text/javascript">
+  $("#dur-one").click( function() {
+  	$("dur").innerHTML("one month");
+  });
+  $("#dur-three").click( function() {
+  	$("dur").innerHTML("three months");
+  });
+  $("#dur-six").click( function() {
+  	$("dur").innerHTML("six months");
+  });
+</script>
