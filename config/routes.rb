@@ -1,10 +1,6 @@
 Goalkeeper::Application.routes.draw do
 
-  resources :atoms
-
-
-  resources :goals
-  resources :users
+  resources :users, :goals, :atoms
 
   root :to => 'gk#index', :as => :index
   get "feed" => "gk#feed", :as => :feed
@@ -20,6 +16,11 @@ Goalkeeper::Application.routes.draw do
 
   post 'goals/new/commitment' => 'goals#commitment', :as => :commitment
   post 'goals/new/action' => 'goals#action', :as => :action
+
+  get 'goals/:id/atoms' => 'goals#atoms'
+
+  get 'goals/:id/success/' => 'atoms#success', :as => :success
+  get 'goals/:id/failure/' => 'atoms#failure', :as => :failure
 
   get 'ziggeo' => 'gk#ziggeo'
 

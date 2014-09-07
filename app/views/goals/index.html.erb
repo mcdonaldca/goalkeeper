@@ -4,8 +4,9 @@
 <ul>
 <% @goals.each do |goal| %>
 <li>
-Did you <b><%= goal.action %></b> today? <%= goal.duration %>, <%= goal.frequency %>, <%= goal.charity %>(<%= link_to "View", goal %>, 
-  <%= link_to "Delete", goal_url(goal), method: 'delete' %>)
+Did you <b><%= goal.action %></b> today? (<%= link_to "Delete", goal_url(goal), method: 'delete' %>)
+<%= link_to "Yes", success_url(goal) %> <%= link_to "No", failure_url(goal) %> <%= link_to "Progress", goal %> 
+  
 </li>
 <% end %>
 </ul>
