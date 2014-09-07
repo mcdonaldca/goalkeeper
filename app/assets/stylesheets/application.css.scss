@@ -110,3 +110,15 @@ h1 {
 	text-align: center;
 	border-bottom: 2px black dotted;
 }
+
+.logout {
+	text-align: right;
+	padding-right: .75em;
+	padding-top: 2.15em;
+	a {
+		color: white;
+		text-decoration:none;
+		font: 1em $abel-stack;
+
+	}
+}
