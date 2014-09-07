@@ -1,11 +1,15 @@
-<br>
-	<div class="notice"><%= flash[:notice] %></div>
- <%= form_tag(do_login_url, method: "post") do %>
-   <%= text_field_tag :email, nil, placeholder: 'Email' %><br />
-   <%= password_field_tag :password, nil, placeholder: 'Password' %><br />
-   <%= submit_tag "Log In", class: "button submit" %>
- <% end %>
+<div class="login">
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
 
- <div class="new-user">
- 	<%= link_to "Create New User", new_user_url %>
- </div>
+	<%= form_tag(do_login_url, method: "post") do %>
+		<%= text_field_tag     :email,    nil, placeholder: 'Email' %><br />
+		<%= password_field_tag :password, nil, placeholder: 'Password' %><br />
+		<%= submit_tag "Log In", class: "button submit" %>
+	<% end %>
+
+	<div class="new-user">
+		<%= link_to "Create New User", new_user_url %>
+	</div>
+</div>

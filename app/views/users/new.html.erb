@@ -1,24 +1,29 @@
-<h2> New user </h2>
+<h2>Sign Up</h2>
 
-<%= form_for @user do |f| %>
- <% if @user.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div class="sign-up">
+  <%= form_for @user do |f| %>
+   <% if @user.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
     <% end %>
-    </ul>
-  </div>
+    <%= f.text_field :email, placeholder: 'Email', class: "email" %><br />
+    <%= f.text_field :first, placeholder: 'First Name', class: "name" %><br />
+    <%= f.text_field :last, placeholder: 'Last Name', class: "name" %><br />
+    <%= f.label :birthday, "Birthday" %> <%= f.date_select :birthday, :start_year => 1970, :end_year => Time.now.year %><br />
+    <%= f.label :gender, "Gender" %> <%= f.select :gender, [["Male", "male"], ["Female", "female"], ["Other", "other"]] %><br />
+    <%= f.password_field :password, placeholder: "Password", class: "password" %> <br />
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "password" %>  <br />
+    <%= f.submit class: "button submit" %>
   <% end %>
-  <%= f.label :email, "Email" %> <%= f.text_field :email %><br />
-  <%= f.label :first, "First Name" %> <%= f.text_field :first %><br />
-  <%= f.label :last, "Last Name" %> <%= f.text_field :last %><br />
-  <%= f.label :birthday, "Birthday" %> <%= f.date_select :birthday, :start_year => 1970, :end_year => Time.now.year %><br />
-  <%= f.label :gender, "Gender" %> <%= f.select :gender, [["Male", "male"], ["Female", "female"], ["Other", "other"]] %><br />
-  <%= f.label :password, "Password" %> <%= f.password_field :password %> <br />
-  Confirm: <%= f.password_field :password_confirmation %>  <br />
-  <%= f.submit %>
-<% end %>
-<hr />
-<%= link_to "Cancel", index_url %>
+
+  <div class="new-user">
+    <%= link_to "Cancel", index_url %>
+  </div>
+
+</div>

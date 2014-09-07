@@ -17,6 +17,34 @@ $grey-blue: #434F5B;
 	}
 }
 
+.login {
+	margin-top: 1em;
+
+	input[type="text"] {
+		background-image: url(<%= asset_path 'email.png' %>);
+	}
+
+	input[type="password"] {
+		background-image: url(<%= asset_path 'password.png' %>);
+	}
+}
+
+.sign-up {
+	margin-top: 1em;
+
+	input.email {
+		background-image: url(<%= asset_path 'email.png' %>);
+	}
+
+	input.password {
+		background-image: url(<%= asset_path 'password.png' %>);
+	}
+
+	input.name {
+		background-image: url(<%= asset_path 'person.png' %>);
+	}
+}
+
 input[type="text"], input[type="password"] {
 	background: white;
 	border: 1px #ccc solid;
@@ -25,17 +53,7 @@ input[type="text"], input[type="password"] {
 	margin: .5em 5%;
 	padding-left: 10%;
 	font-size: 1.5em;
-}
 
-input[type="text"] {
-	background-image: url(<%= asset_path 'email.png' %>);
-	background-position: 12px 10px;
-	background-size: 25px 25px;
-	background-repeat: no-repeat;
-}
-
-input[type="password"] {
-	background-image: url(<%= asset_path 'password.png' %>);
 	background-position: 12px 10px;
 	background-size: 25px 25px;
 	background-repeat: no-repeat;
