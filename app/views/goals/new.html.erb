@@ -11,9 +11,34 @@
     </ul>
   </div>
   <% end %>
-  <p>only choice is AmericanHeartAssociation</p>
-  <%= f.label :charity, "Charity" %> <%= f.text_field :charity, value: "AmericanHeartAssociation" %><br />
-  <%= f.submit %>
+  <%= f.label :charity, "Select a Charity" %>
+  <div class="people">
+    <div class="person">
+      <div class="friend-profile" style="background:url(<%= asset_path 'AHA.jpg' %>);background-size:50px 50px;">
+      </div>
+      <p>American Heart Association</p>
+      <input type="checkbox" id="AmericanHeartAssociation" name="people[]" value="AmericanHeartAssociation" >
+    </div>
+    <div class="person">
+      <div class="friend-profile" style="background:url(<%= asset_path 'possible.jpg' %>);background-size:50px 50px;">
+      </div>
+      <p>Possible Health</p>
+      <input type="checkbox" id="possible" name="people[]" value="possible" >
+    </div>
+    <div class="person">
+      <div class="friend-profile" style="background:url(<%= asset_path 'GiveDirectly.jpg' %>);background-size:50px 50px;">
+      </div>
+      <p>GiveDirectly</p>
+      <input type="checkbox" id="givedirectly" name="people[]" value="givedirectly" >
+    </div>
+    <div class="person">
+      <div class="friend-profile" style="background:url(<%= asset_path 'MNM.jpg' %>);background-size:50px 50px;">
+      </div>
+      <p>Malaria No More</p>
+      <input type="checkbox" id="malarianomore" name="people[]" value="malarianomore" >
+    </div>
+  </div>
+  <%= f.submit "Select", class: "button submit" %>
 <% end %>
 <hr />
 <%= link_to "Cancel", goals_url %>

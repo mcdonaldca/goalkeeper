@@ -1,0 +1,43 @@
+// Place all the styles related to the Goals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.people {
+	input[type="checkbox"] {
+		display: none;
+	}
+}
+
+.person,
+.verify {
+	position: relative;
+	padding: 15px 0 10px 15px;
+
+	.friend-profile {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	p {
+		position: relative;
+		top: -17px;
+		left: 12px;
+		display: inline-block;
+		font: 22px "Raleway", sans-serif;
+		font-weight: 400;
+	}
+
+	.owe {
+		float: right;
+		margin: 20px 40px 0 0;
+	}
+
+}
+
+.person.selected {
+	background: #E7EBEE;
+	.friend-profile {
+		background: url(<%= asset_path 'checked.png' %>) !important;
+	}
+}
