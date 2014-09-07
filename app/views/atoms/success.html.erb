@@ -1,7 +1,19 @@
 <h1>Good Job! Now prove it.</h1>
 <ziggeo ziggeo-responsive></ziggeo>
-<%= form_tag '/proof', method: "post", class: "success-form" do %>
+<div class="success-form">
+<%= form_tag('/proof') do %>
    <%= text_field_tag :note, nil, placeholder: 'Notes?', class: "note" %><br />
-   <%= hidden_field_tag(:token) %>
+   <%= hidden_field_tag :id, params[:id] %>
+   <%= hidden_field_tag :token %>
    <%= submit_tag "Done", class: "button submit" %>
 <% end %>
+</div>
+
+<script>
+	// set the token so the video gets recorded to our app's Ziggeo server
+	ZiggeoApi.token = "8c2faaae2ed59ea9e49847eb95838870";
+	// handle the event when a video has been recorded
+	ZiggeoApi.Events.on("submitted", function(data) {
+		$("#token").val(data.video.token);
+	});
+</script>

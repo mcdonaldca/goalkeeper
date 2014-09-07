@@ -1,1 +1,25 @@
-<%= @atoms %>
+<h1>overall progress</h1>
+  <table class="progress-table">
+	<% count = 0; %>
+	<%  @atoms.each do |atom| %>
+
+	<% if count == 0 %>
+	  <tr>
+	<% end %>
+
+	     <td>
+	     	<%= link_to edit_atom_url(atom) do %>
+	     		<%= image_tag "empty.png" %>
+	     	<% end %>
+	     <div class="day"><%= atom.month + ' ' + atom.day.to_s %></div>
+	  	 </td>
+
+	<% if count == 3 %>
+	   </tr>
+	<% end %>
+
+	<% count = (count + 1)%4 %>
+
+	<% end %>
+
+  </table>

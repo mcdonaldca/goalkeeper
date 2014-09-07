@@ -11,14 +11,6 @@
   <%= favicon_link_tag 'icon_appicon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
   <%= favicon_link_tag 'icon_greenNwhite.png', :rel => 'shortcut icon', :type => 'image/png' %>
   <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-  <script>
-  	// set the token so the video gets recorded to our app's Ziggeo server
-  	ZiggeoApi.token = "8c2faaae2ed59ea9e49847eb95838870";
-  	// handle the event when a video has been recorded
-  	ZiggeoApi.Events.on("submitted", function(data) {
-  		alert("Submitted a new video with token '" + data.video.token + "'!");
-  	});
-  </script>
 </head>
 <body>
 
